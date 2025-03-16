@@ -6,9 +6,9 @@ import threading
 from threading import Thread
 
 
-def validacao(numero: int, lista: dict) -> bool:
+def validacao(numero: int, lista: dict) -> None:
     contador: int = 0
-    resultado: bool = True
+    primo: bool = True
 
     for n in range(1, numero + 1, 1):
         divisao: float = numero % n
@@ -18,9 +18,9 @@ def validacao(numero: int, lista: dict) -> bool:
             break
 
     if numero==0 or numero == 1 or contador > 2:
-        resultado = False
+        primo = False
 
-    lista[numero] = resultado
+    lista[numero] = primo
 
 
 if __name__ == '__main__':

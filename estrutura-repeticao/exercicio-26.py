@@ -4,6 +4,7 @@
 """
 
 if __name__ == '__main__':
+    print("Votação candidatos")
     condicao = True
     total_votos: int = 0
     candidato1: int = 0

@@ -1,28 +1,16 @@
 """
-    O Departamento Estadual de Meteorologia lhe contratou para desenvolver um programa que leia as um conjunto
-    indeterminado de temperaturas, e informe ao final a menor e a maior temperaturas informadas, bem como a média
-    das temperaturas.
+    Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5!=5.4.3.2.1=120.
+    A saída deve ser conforme o exemplo abaixo:
 """
 
 
 if __name__ == '__main__':
-    print("Dados sobre temperaturas")
+    print("Fatorial")
 
-    condicao: bool = True
-    temperaturas: list[float] = list()
+    numero: int = int(input("Informe um número para o fatorial:"))
+    acumulador: int = 1
 
-    while condicao:
-        temperatura: float = float(input("Informe o valor da temperatura em ºC:"))
-        temperaturas.append(temperatura)
+    for n in range(numero, 0, -1):
+        acumulador *= n
 
-        opcao: str = input("Deseja inserir mais uma temperatura? S-sim/N-não:")
-        if opcao == "N":
-            condicao = False
-
-    menor_temperatura: float = min(temperaturas)
-    maior_temperatura: float = max(temperaturas)
-    media_temperaturas: float = sum(temperaturas)/len(temperaturas)
-
-    print(f"Menor temperatura: {menor_temperatura}")
-    print(f"Maior temperatura: {maior_temperatura}")
-    print(f"Temperatura média: {media_temperaturas}")
+    print(f"Fatorial: {acumulador}")

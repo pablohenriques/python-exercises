@@ -1,28 +1,28 @@
 """
-    Os números primos possuem várias aplicações dentro da Computação, por exemplo na Criptografia. Um número primo é
-    aquele que é divisível apenas por um e por ele mesmo. Faça um programa que peça um número inteiro e determine se
-    ele é ou não um número primo.
+    O Departamento Estadual de Meteorologia lhe contratou para desenvolver um programa que leia as um conjunto
+    indeterminado de temperaturas, e informe ao final a menor e a maior temperaturas informadas, bem como a média
+    das temperaturas.
 """
 
 
 if __name__ == '__main__':
-    print("Validando números primos")
+    print("Dados sobre temperaturas")
 
-    numero: int = int(input("Digite um número para validação:"))
-    contador: int = 0
-    tipo_numero: str = ""
+    condicao: bool = True
+    temperaturas: list[float] = list()
 
-    for n in range(1, numero+1, 1):
-        divisao: int = numero % n
+    while condicao:
+        temperatura: float = float(input("Informe o valor da temperatura em ºC:"))
+        temperaturas.append(temperatura)
 
-        if divisao == 0:
-            contador += 1
-        if contador > 2:
-            break
+        opcao: str = input("Deseja inserir mais uma temperatura? S-sim/N-não:")
+        if opcao == "N":
+            condicao = False
 
-    if contador == 1 or contador > 2:
-        tipo_numero = "não é primo"
-    else:
-        tipo_numero = "é primo"
+    menor_temperatura: float = min(temperaturas)
+    maior_temperatura: float = max(temperaturas)
+    media_temperaturas: float = sum(temperaturas)/len(temperaturas)
 
-    print("O número %d %s" % (numero, tipo_numero) )
+    print(f"Menor temperatura: {menor_temperatura}")
+    print(f"Maior temperatura: {maior_temperatura}")
+    print(f"Temperatura média: {media_temperaturas}")
